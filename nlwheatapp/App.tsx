@@ -8,6 +8,7 @@ import {
 } from '@expo-google-fonts/roboto'
 import AppLoading from 'expo-app-loading'
 import { StatusBar } from 'react-native'
+import { AuthProvider } from './src/hooks/auth'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -20,13 +21,13 @@ export default function App() {
   }
 
   return (
-    <>
+    <AuthProvider>
       <StatusBar
         translucent
         barStyle="light-content"
         backgroundColor="transparent"
       />
       <Home />
-    </>
+    </AuthProvider>
   )
 }
